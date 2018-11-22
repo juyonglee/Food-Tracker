@@ -16,12 +16,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        //  Handle the text field's user input through delegate callbacks.
+        nameTextField.delegate = self
     }
 
     //  MARK: Actions
     @IBAction func setDefaultLabelText(_ sender: UIButton) {
         mealNameLabel.text = "Default Text"
+    }
+    
+    //  MARK: UITextFieldDelegate
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        //  Hide the keyboard.
+        nameTextField.resignFirstResponder()
+        return true
     }
 }
 

@@ -27,6 +27,18 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
     
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
+        //  Hide the keyboard.
+        nameTextField.resignFirstResponder()
+        
+        //  UIImagePickerController is a view controller that lets a user pick media from their photo library.
+        let imagePickerController = UIImagePickerController()
+        
+        //  Only allow photos to be picked, not taken.
+        imagePickerController.sourceType = .photoLibrary
+        
+        //  Make sure ViewController is notified when the user picks an image.
+        imagePickerController.delegate = self
+        present(imagePickerController, animated: true, completion: nil)
     }
     
     //  MARK: UITextFieldDelegate

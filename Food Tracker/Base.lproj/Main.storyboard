@@ -50,7 +50,7 @@
                                             <outletCollection property="gestureRecognizers" destination="0PO-UY-Ox6" appends="YES" id="Psz-MT-0Nl"/>
                                         </connections>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tdj-I8-45W" customClass="RatingControl" customModule="Food_Tracker" customModuleProvider="target">
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Tdj-I8-45W" customClass="RatingControl" customModule="Food_Tracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="432.5" width="200" height="110"/>
                                     </stackView>
                                 </subviews>

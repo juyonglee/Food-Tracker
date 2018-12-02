@@ -11,6 +11,8 @@ import UIKit
 @IBDesignable class RatingControl: UIStackView {
 
     //  MARK: Properties
+    @IBInspectable var startSize: CGSize = CGSize(width: 44.0, height: 44.0)
+    @IBInspectable var startCount: Int = 5
     private var ratingButton = [UIButton]()
     var rating = 0
     
@@ -33,15 +35,15 @@ import UIKit
     
     //  MARK: Private Methods
     private func setupButtons() {
-        for _ in 0..<5 {
+        for _ in 0..<startCount {
             //  Create the button
             let button = UIButton()
             button.backgroundColor = UIColor.red
             
             //  Add constraints
             button.translatesAutoresizingMaskIntoConstraints = false
-            button.heightAnchor.constraint(equalToConstant: 44.0).isActive = true
-            button.widthAnchor.constraint(equalToConstant: 44.0).isActive = true
+            button.heightAnchor.constraint(equalToConstant: startSize.height).isActive = true
+            button.widthAnchor.constraint(equalToConstant: startSize.width).isActive = true
             
             //  Setup the button action
             button.addTarget(self, action: #selector(ratingButtonTapped(button:)), for: .touchUpInside)

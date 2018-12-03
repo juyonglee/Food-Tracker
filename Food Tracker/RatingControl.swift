@@ -60,6 +60,13 @@ import UIKit
     }
     
     //  MARK: Private Methods
+    private func updataButtonSelectionStates() {
+        for (index, button) in ratingButton.enumerated() {
+            //  If the index of a button is less than the rating, that button should be selected.
+            button.isSelected = index < rating ? true : false
+        }
+    }
+    
     private func setupButtons() {
         //  Load Button Images
         let bundle = Bundle(for: type(of: self))
@@ -99,12 +106,7 @@ import UIKit
             ratingButton.append(button)
         }
         
+        updataButtonSelectionStates()
     }
     
-    private func updataButtonSelectionStates() {
-        for (index, button) in ratingButton.enumerated() {
-            //  If the index of a button is less than the rating, that button should be selected.
-            button.isSelected = index < rating ? true : false
-        }
-    }
 }

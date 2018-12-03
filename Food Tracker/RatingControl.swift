@@ -23,7 +23,11 @@ import UIKit
         }
     }
     private var ratingButton = [UIButton]()
-    var rating = 0
+    var rating = 0 {
+        didSet {
+            updataButtonSelectionStates()
+        }
+    }
     
     //  MARK: Initialization
     override init(frame: CGRect) {

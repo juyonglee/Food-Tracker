@@ -98,5 +98,9 @@ import UIKit
     }
     
     private func updataButtonSelectionStates() {
+        for (index, button) in ratingButton.enumerated() {
+            //  If the index of a button is less than the rating, that button should be selected.
+            button.isSelected = index < rating ? true : false
+        }
     }
 }

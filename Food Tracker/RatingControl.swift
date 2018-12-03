@@ -11,8 +11,17 @@ import UIKit
 @IBDesignable class RatingControl: UIStackView {
 
     //  MARK: Properties
-    @IBInspectable var startSize: CGSize = CGSize(width: 44.0, height: 44.0)
-    @IBInspectable var startCount: Int = 5
+    @IBInspectable var startSize: CGSize = CGSize(width: 44.0, height: 44.0) {
+        didSet{
+            setupButtons()
+        }
+    }
+    
+    @IBInspectable var startCount: Int = 5 {
+        didSet {
+            setupButtons()
+        }
+    }
     private var ratingButton = [UIButton]()
     var rating = 0
     
@@ -35,6 +44,13 @@ import UIKit
     
     //  MARK: Private Methods
     private func setupButtons() {
+        //  Clear any existing buttons
+        for button in ratingButton {
+            removeArrangedSubview(button)
+            button.removeFromSuperview()
+        }
+        ratingButton.removeAll()
+        
         for _ in 0..<startCount {
             //  Create the button
             let button = UIButton()

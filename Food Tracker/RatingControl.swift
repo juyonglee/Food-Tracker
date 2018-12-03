@@ -60,7 +60,12 @@ import UIKit
         for _ in 0..<startCount {
             //  Create the button
             let button = UIButton()
-            button.backgroundColor = UIColor.red
+            
+            //  Set the button images
+            button.setImage(emptyStar, for: .normal)
+            button.setImage(filledStar, for: .selected)
+            button.setImage(highlightedStar, for: .highlighted)
+            button.setImage(highlightedStar, for: [.highlighted, .selected])
             
             //  Add constraints
             button.translatesAutoresizingMaskIntoConstraints = false

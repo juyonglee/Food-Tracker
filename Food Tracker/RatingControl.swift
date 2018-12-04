@@ -81,7 +81,7 @@ import UIKit
         }
         ratingButton.removeAll()
         
-        for _ in 0..<startCount {
+        for index in 0..<startCount {
             //  Create the button
             let button = UIButton()
             
@@ -95,6 +95,9 @@ import UIKit
             button.translatesAutoresizingMaskIntoConstraints = false
             button.heightAnchor.constraint(equalToConstant: startSize.height).isActive = true
             button.widthAnchor.constraint(equalToConstant: startSize.width).isActive = true
+            
+            //  Set the accessibility label
+            button.accessibilityLabel = "Set \(index+1) star rating"
             
             //  Setup the button action
             button.addTarget(self, action: #selector(ratingButtonTapped(button:)), for: .touchUpInside)

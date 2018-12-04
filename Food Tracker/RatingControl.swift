@@ -23,6 +23,7 @@ import UIKit
         }
     }
     private var ratingButton = [UIButton]()
+    
     var rating = 0 {
         didSet {
             updataButtonSelectionStates()
@@ -64,6 +65,27 @@ import UIKit
         for (index, button) in ratingButton.enumerated() {
             //  If the index of a button is less than the rating, that button should be selected.
             button.isSelected = index < rating ? true : false
+            
+            //  Set the hint string for the currently selected star
+            let hintString: String?
+            if rating == index+1 {
+                hintString = "평점을 초기화 하시려면 클릭하세요."
+            } else {
+                hintString = nil
+            }
+            
+            //  Calculate the value string
+            let valueString: String
+            switch(rating) {
+            case 0:
+                valueString = "현재 평점이 설정되어 있지 않습니다."
+            default:
+                valueString = "현재 \(rating)점이 설정되었습니다."
+            }
+            
+            //  Assign the hint string and value string
+            button.accessibilityHint = hintString
+            button.accessibilityValue = valueString
         }
     }
     
@@ -97,7 +119,7 @@ import UIKit
             button.widthAnchor.constraint(equalToConstant: startSize.width).isActive = true
             
             //  Set the accessibility label
-            button.accessibilityLabel = "Set \(index+1) star rating"
+            button.accessibilityLabel = "\(index+1)점"
             
             //  Setup the button action
             button.addTarget(self, action: #selector(ratingButtonTapped(button:)), for: .touchUpInside)

@@ -58,7 +58,7 @@
                     <navigationItem key="navigationItem" title="Your Meals" id="ZZP-wc-g8u">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="R2a-r8-8kh">
                             <connections>
-                                <segue destination="xCt-5P-cda" kind="presentation" identifier="AddItem" id="99l-ef-f9P"/>
+                                <segue destination="xCt-5P-cda" kind="presentation" id="yMF-1g-PLp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -70,7 +70,7 @@
         <!--New Meal-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Food_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MealViewController" customModule="Food_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

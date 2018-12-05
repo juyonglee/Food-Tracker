@@ -103,11 +103,11 @@ class MealTableViewController: UITableViewController {
             fatalError("Unable to instantiate meal1")
         }
         
-        guard let meal2 = Meal(name: "삼겹살", photo: photo2 , rating: 4) else {
+        guard let meal2 = Meal(name: "Chicken and Potatoes", photo: photo2 , rating: 4) else {
             fatalError("Unable to instantiate meal2")
         }
         
-        guard let meal3 = Meal(name: "삼겹살", photo: photo3 , rating: 3) else {
+        guard let meal3 = Meal(name: "Pasta with Meatballs", photo: photo3 , rating: 3) else {
             fatalError("Unable to instantiate meal2")
         }
         

@@ -64,6 +64,11 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     }
     
     //  MARK: UITextFieldDelegate
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        //  Disable the Save button while editing.
+        saveButton.isEnabled = false
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         //  Hide the keyboard.
         nameTextField.resignFirstResponder()

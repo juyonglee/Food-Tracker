@@ -14,6 +14,13 @@ class Meal {
     var photo: UIImage?
     var rating: Int
     
+    //  MARK: Types
+    struct PropertyKey {
+        static let name = "name"
+        static let photo = "photo"
+        static let rating = "rating"
+    }
+    
     //  MARK: Initialization
     init?(name: String, photo: UIImage?, rating: Int) {
         //  The name must not be empty
